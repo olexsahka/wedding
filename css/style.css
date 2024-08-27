@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
+/* Общие стили */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f8f9fa; /* Очень светлый серый фон */
+    color: #343a40; /* Темно-серый цвет текста */
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+/* Стили для навбара */
+.navbar {
+    padding: 0.5rem 1rem; /* Отступы для навбара */
+    border-bottom: 1px solid #dee2e6; /* Легкая граница снизу */
+}
+
+.navbar-brand img {
+    height: 24px; /* Универсальный размер логотипа */
+}
+
+.navbar-title {
+    font-size: 24px; /* Размер текста */
+    color: #495057; /* Теплый серый цвет */
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Иконка сердечка */
+.navbar-title i {
+    color: #6c757d; /* Светло-серый цвет */
+    padding-left: 8px;
+}
+
+/* Иконка QR */
+.navbar-qr img {
+    filter: grayscale(100%); /* Черно-белый фильтр */
+    width: 24px;
+    height: 24px;
+}
+
+/* Упорядочивает элементы в навбаре */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для карточек категорий */
+.category {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px; /* Закругленные углы */
+    overflow: hidden; /* Скрытие части изображения за границами блока */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    background-color: #ffffff; /* Белый фон карточек */
+    border: 1px solid #ced4da; /* Светло-серая граница */
+}
+
+/* Эффект при наведении на карточку */
+.category:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Увеличенная тень при наведении */
+}
+
+/* Стили для карточек и текста под карточками */
+.card-body {
+    height: 30%;
+    background-color: #f1f3f5; /* Очень светлый фон */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #dee2e6; /* Легкая граница сверху */
+}
+
+.card-text {
+    color: #495057; /* Теплый серый цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: 400; /* Нормальное начертание шрифта */
+    font-style: italic; /* Курсивное начертание */
+    text-align: center;
+}
+
+
+.video-container {
+    width: 900px;
+    height: 500px;
+    margin-top: 36px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;  /* Видео заполняет контейнер по ширине */
+    height: 100%; /* Видео заполняет контейнер по высоте */
+    object-fit: contain; /* Сохранение пропорций видео */
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+}
+
+.modal-dialog {
+    margin: 15% auto;
+    width: 80%;
+    max-width: 500px;
+}
