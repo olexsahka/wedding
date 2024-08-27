@@ -5,48 +5,95 @@
 /* Общие стили */
 body {
     font-family: 'Playfair Display', serif;
-    background-color: #f8f9fa; /* Очень светлый серый фон */
-    color: #343a40; /* Темно-серый цвет текста */
+    background-color: #f8f9fa;
+    color: #343a40;
     margin: 0;
     padding: 0;
-    align-items: center; /* Центрирование по вертикали */
-    justify-content: center; /* Центрирование по горизонтали */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Стили для навбара */
 .navbar {
-    padding: 0.5rem 1rem; /* Отступы для навбара */
-    border-bottom: 1px solid #dee2e6; /* Легкая граница снизу */
+    width: 100%; /* Занимает всю ширину экрана */
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Располагаем элементы по краям */
+    box-sizing: border-box; /* Включаем паддинги в ширину элемента */
+    background-color: #ffffff; /* Фон навбара */
 }
 
-.navbar-brand img {
-    height: 24px; /* Универсальный размер логотипа */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-back {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 18px; /* Размер текста */
+    color: #495057; /* Цвет текста */
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.navbar-back:hover {
+    color: #007bff; /* Изменение цвета при наведении */
+}
+
+.arrow-back {
+    display: inline-block;
+    width: 12px; /* Ширина стрелочки */
+    height: 12px; /* Высота стрелочки */
+    border-left: 2px solid #495057; /* Линии стрелочки */
+    border-bottom: 2px solid #495057;
+    transform: rotate(45deg); /* Поворот для создания стрелочки */
+    margin-right: 8px; /* Отступ справа */
+    transition: border-color 0.3s ease; /* Плавный переход цвета границ */
+}
+
+.navbar-back:hover .arrow-back {
+    border-color: #007bff; /* Цвет стрелочки при наведении */
 }
 
 .navbar-title {
-    font-size: 24px; /* Размер текста */
-    color: #495057; /* Теплый серый цвет */
+    font-size: 24px;
+    color: #495057;
     text-align: center;
-    flex-grow: 1;
+    flex-grow: 1; /* Центрирование текста в навбаре */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Иконка сердечка */
+.navbar-title2 {
+    font-size: 24px;
+    color: #495057;
+    text-align: center;
+    flex-grow: 1; /* Центрирование текста в навбаре */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .navbar-title i {
-    color: #6c757d; /* Светло-серый цвет */
+    color: #6c757d;
     padding-left: 8px;
 }
 
-/* Иконка QR */
-.navbar-qr img {
-    filter: grayscale(100%); /* Черно-белый фильтр */
-    width: 24px;
-    height: 24px;
-}
-
-/* Упорядочивает элементы в навбаре */
-.container {
+.navbar-qr {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar-qr img {
+    filter: grayscale(100%);
+    width: 24px;
+    height: 24px;
 }
 
 /* Стили для карточек категорий */
@@ -55,41 +102,39 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    border-radius: 15px; /* Закругленные углы */
-    overflow: hidden; /* Скрытие части изображения за границами блока */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
-    background-color: #ffffff; /* Белый фон карточек */
-    border: 1px solid #ced4da; /* Светло-серая граница */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    margin-bottom: 20px;
 }
 
-/* Эффект при наведении на карточку */
 .category:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Увеличенная тень при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Стили для карточек и текста под карточками */
 .card-body {
     height: 30%;
-    background-color: #f1f3f5; /* Очень светлый фон */
+    background-color: #f1f3f5;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid #dee2e6; /* Легкая граница сверху */
+    border-top: 1px solid #dee2e6;
 }
 
 .card-text {
-    color: #495057; /* Теплый серый цвет текста */
-    font-size: 16px; /* Размер шрифта */
-    font-weight: 400; /* Нормальное начертание шрифта */
-    font-style: italic; /* Курсивное начертание */
+    color: #495057;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
     text-align: center;
 }
 
-
 .video-container {
-    width: 900px;
-    height: 500px;
+    width: 1100px;
+    height: 600px;
     margin-top: 36px;
     margin-bottom: auto;
     margin-left: auto;
@@ -103,13 +148,13 @@ body {
 video {
     max-width: 100%;
     max-height: 100%;
-    width: 100%;  /* Видео заполняет контейнер по ширине */
-    height: 100%; /* Видео заполняет контейнер по высоте */
-    object-fit: contain; /* Сохранение пропорций видео */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .modal {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -117,11 +162,89 @@ video {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-dialog {
     margin: 15% auto;
     width: 80%;
     max-width: 500px;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 20px; /* Уменьшаем размер текста для мобильных */
+    }
+
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar-brand,
+    .navbar-qr {
+        flex: 1; /* Элементы навбара занимают равное пространство */
+    }
+
+    .navbar-brand img {
+        height: 20px; /* Уменьшаем размер логотипа */
+    }
+
+    .navbar-qr img {
+        width: 20px; /* Уменьшаем размер иконки QR */
+        height: 20px;
+    }
+
+    .video-container {
+        width: 100%; /* Ширина видео на мобильных устройствах */
+        height: auto; /* Автоматическая высота */
+        padding: 0 10px; /* Небольшие отступы по бокам */
+    }
+
+    .category {
+        margin-bottom: 15px; /* Уменьшаем отступы между карточками */
+    }
+
+    .card-text {
+        font-size: 14px; /* Уменьшаем размер текста в карточках */
+    }
+
+    .modal-dialog {
+        width: 90%; /* Увеличиваем ширину модального окна */
+        margin: 25% auto; /* Сдвигаем модальное окно немного ниже */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-title {
+        font-size: 18px; /* Еще меньше размер текста */
+    }
+
+    .navbar-brand img {
+        height: 18px; /* Минимальный размер логотипа */
+    }
+
+    .navbar-qr img {
+        width: 18px; /* Минимальный размер иконки QR */
+        height: 18px;
+    }
+
+    .video-container {
+        width: 100%; /* Полная ширина экрана */
+        height: auto; /* Автоматическая высота */
+        padding: 0 5px; /* Минимальные отступы по бокам */
+    }
+
+    .category {
+        margin-bottom: 10px; /* Еще меньше отступов между карточками */
+    }
+
+    .card-text {
+        font-size: 12px; /* Уменьшаем размер текста в карточках для маленьких экранов */
+    }
+
+    .modal-dialog {
+        width: 95%; /* Максимальная ширина модального окна */
+        margin: 30% auto; /* Сдвиг модального окна для мобильных */
+    }
 }
